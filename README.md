@@ -24,7 +24,7 @@ localhost
 localhost/wordpress
 localhost/phpMyAdmin
 ```
-**" You will need to make
+**"You will need to make
 sure your SQL database works with the WordPress and phpMyAdmin" :**
 - Go to `localhost/wordpress`
 - Fill information (don't forget your username and password)
@@ -192,6 +192,7 @@ I'm tired of writing, please follow this very good tutorial : https://www.itzgee
 According to the subject, "*Your server should be able to use the SSL protocol*".
 
 https://letsencrypt.org/fr/docs/certificates-for-localhost/
+
 https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-nginx-on-debian-10
 
 ### 6. Dealing with autoindex
@@ -233,12 +234,12 @@ In `disable_autoindex.sh`, I'm going to :
 
 Your *caring, kind, gracious, understanding, considerate, benevolent* peer will probably try the following :
 - launch your file and check that everything is working ;
-- go to your localhost/wordpress and check that you don't have any error messages
+- go to your localhost/wordpress and check that you don't have any error messages ;
  and that your database is properly taken into account ;
 - do the same on phpmyadmin ;
 - modify your wordpress page and see if the changes are taken into account on phpmyadmin ;
 - look carefully at the bottom of phpmyadmin that you have no error message ;
-- try to deactivate and reactivate the index of your localhost.
+- try to deactivate and reactivate the index of your localhost ;
 - check that you can connect in http and https and that you have a certificate.
 
 
