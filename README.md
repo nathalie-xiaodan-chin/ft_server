@@ -5,38 +5,39 @@ sudo docker build -t myimage .
 sudo docker run -d -p 80:80 -p 443:443 --name=mycontainer myimage
 ```
 
-**Stop ft_server (the hard way):**
+**Stop ft_server (the hard way) :**
 ```
 sudo docker stop mycontainer
 sudo docker rm mycontainer
 sudo docker rmi myimage
 ```
 
-**"You will also need to make sure your server is running with an autoindex that must be able to be disabled"**
+**"You will also need to make sure your server is running with an autoindex that must be able to be disabled" :**
 ```
 docker exec -ti mycontainer bash
 bash disable_autoindex.sh
 ```
 **"You will have to make sure that, depending on the url, your server redirects to the
-correct website."**
+correct website" :**
 ```
 localhost
 localhost/wordpress
 localhost/phpMyAdmin
 ```
 **" You will need to make
-sure your SQL database works with the WordPress and phpMyAdmin."**
+sure your SQL database works with the WordPress and phpMyAdmin" :**
 - Go to `localhost/wordpress`
 - Fill information (don't forget your username and password)
 - Go to `Posts` on the left column, then add a new post
 - Go to `localhost/phpMyAdmin/` (user is nath and password is toto)
 - Go to `nath_db` on the left column, and click on `wp_posts`. *The new post is in the database hooray!*
 
-**Bypass "your connection is not private chrome" in Chrome**
+**Bypass "your connection is not private chrome" in Chrome :**
 - In the Chrome address bar, type “chrome://flags/#allow-insecure-localhost“
 - Select the “Enable” link.
 
-**Prevent firefox to redirect http to https**
+**Prevent firefox to redirect http to https :**
+
 https://stackoverflow.com/questions/30532471/firefox-redirects-to-https
 
 ---
