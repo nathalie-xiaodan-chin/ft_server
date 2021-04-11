@@ -3,7 +3,8 @@ RUN apt-get update \
 && apt-get -y install wget \
 && apt-get -y install nginx \
 && apt-get -y install mariadb-server \
-&& apt -y install php-fpm php-mysql \
+&& apt-get -y install php-fpm php-mysql \
+&& apt install -y php-json php-mbstring \
 && apt-get install openssl \
 && wget https://wordpress.org/latest.tar.gz \
 && wget https://files.phpmyadmin.net/phpMyAdmin/4.9.0.1/phpMyAdmin-4.9.0.1-all-languages.tar.gz
@@ -54,6 +55,11 @@ RUN mkdir var/www/localhost/phpMyAdmin \
 && rm -rf phpMyAdmin-4.9.0.1-all-languages \
 && rm -rf phpMyAdmin-4.9.0.1-all-languages.tar.gz \
 && rm -rf var/www/html/index.nginx-debian.html
+
+RUN cp -a config.inc.php var/www/localhost/phpMyAdmin/config.inc.php \
+&& mkdir -p var/www/localhost/phpMyAdmin/tmp/ \
+&& chmod 777 var/www/localhost/phpMyAdmin/tmp/ \
+&& chown -R www-data:www-data var/www/localhost/phpMyAdmin/tmp/
 
 # launch
 CMD ["sh", "-c", "service mysql start && service php7.3-fpm start && service nginx start && sleep infinity"]

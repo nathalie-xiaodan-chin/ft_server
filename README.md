@@ -175,8 +175,8 @@ Hence, we need to modify Nginx’s `sites-available` directory.
 So, we are going to :
 - create our own configuration file (`own_config` in my project) and put inside the name of our domain (`localhost`), and;
 - copy/paste into our docker container (using `COPY` in our dockerfile), and then ;
-- once it's in our container, copy/paste into the right folder (`cp own_config /etc/nginx/sites-available/localhost` in start.sh)
-- activate this configuration by linking to the config file from Nginx’s sites-enabled directory (`ln -s /etc/nginx/sites-available/localhost /etc/nginx/sites-enabled/` in start.sh)
+- once it's in our container, copy/paste into the right folder (`cp own_config /etc/nginx/sites-available/localhost` in dockerfile)
+- activate this configuration by linking to the config file from Nginx’s sites-enabled directory (`ln -s /etc/nginx/sites-available/localhost /etc/nginx/sites-enabled/` in dockerfile)
 
 ### 3. Dealing with Wordpress
 
@@ -226,7 +226,7 @@ In `disable_autoindex.sh`, I'm going to :
 
 - Free your 80 port on the VM : `service nginx stop`
 - Check if everything is ok with docker : `sudo docker run hello-world`
-- If this bastard `localhost` welcome you with Nginx’s default landing page and NOT your index : delete the file `index.nginx-debian.html` (in my project `rm -rf var/www/html/index.nginx-debian.html` in start.sh)
+- If this bastard `localhost` welcome you with Nginx’s default landing page and NOT your index : delete the file `index.nginx-debian.html` (in my project `rm -rf var/www/html/index.nginx-debian.html` in dockerfile)
 
 # **IV. Brace yourself for the correction**
 
