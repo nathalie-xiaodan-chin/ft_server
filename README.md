@@ -32,6 +32,13 @@ sure your SQL database works with the WordPress and phpMyAdmin."**
 - Go to `localhost/phpMyAdmin/` (user is nath and password is toto)
 - Go to `nath_db` on the left column, and click on `wp_posts`. *The new post is in the database hooray!*
 
+**Bypass "your connection is not private chrome" in Chrome**
+- In the Chrome address bar, type “chrome://flags/#allow-insecure-localhost“
+- Select the “Enable” link.
+
+**Prevent firefox to redirect http to https**
+https://stackoverflow.com/questions/30532471/firefox-redirects-to-https
+
 ---
 # **I. Prerequisite for ft_server**
 
