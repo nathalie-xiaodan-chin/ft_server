@@ -31,6 +31,10 @@ sure your SQL database works with the WordPress and phpMyAdmin" :**
 - Go to `Posts` on the left column, then add a new post
 - Go to `localhost/phpMyAdmin/` (user is nath and password is toto)
 - Go to `nath_db` on the left column, and click on `wp_posts`. *The new post is in the database hooray!*
+- If needed for wordpress :
+    - user: kakashi
+    - password : tototatatiti42
+    - email : kakashi@konoha.jp
 
 **Bypass "your connection is not private chrome" in Chrome :**
 - In the Chrome address bar, type “chrome://flags/#allow-insecure-localhost“
@@ -39,6 +43,7 @@ sure your SQL database works with the WordPress and phpMyAdmin" :**
 **Prevent firefox to redirect http to https :**
 
 https://stackoverflow.com/questions/30532471/firefox-redirects-to-https
+
 
 ---
 # **I. Prerequisite for ft_server**
@@ -182,6 +187,11 @@ So, we are going to :
 ### 3. Dealing with Wordpress
 
 I'm tired of writing, please follow this very good tutorial : https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-lemp-nginx-mariadb-and-php-on-debian-10
+Then, in order to save your sql database :
+- Go to `localhost/phpMyAdmin`, export your database and save it in your `srcs` folder (mine is named `nath_db.sql`) ;
+- In the dockerfile :
+    - add the file `nath_db.sql` with `COPY srcs/nath_db.sql ./` ;
+    - import your database with this command : `mysql -u root nath_db < nath_db.sql`.
 
 ### 4. Dealing with phpMyAdmin
 

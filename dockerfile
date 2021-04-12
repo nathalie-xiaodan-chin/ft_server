@@ -17,6 +17,7 @@ COPY srcs/wp-config.php ./
 COPY srcs/config.inc.php ./
 COPY srcs/config_autoindex_off ./
 COPY srcs/disable_autoindex.sh ./
+COPY srcs/nath_db.sql ./
 
 EXPOSE 80:80
 EXPOSE 443:443
@@ -29,7 +30,8 @@ RUN mkdir /etc/nginx/ssl \
 RUN service mysql start \
 && echo "CREATE DATABASE nath_db;" | mysql -u root \
 && echo "GRANT ALL ON nath_db.* TO 'nath'@'localhost' IDENTIFIED BY 'toto' WITH GRANT OPTION;"| mysql -u root \
-&& echo "FLUSH PRIVILEGES;" | mysql -u root
+&& echo "FLUSH PRIVILEGES;" | mysql -u root \
+&& mysql -u root nath_db < nath_db.sql
 
 # nginx config
 RUN mkdir -p /var/www/localhost \
