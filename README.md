@@ -22,6 +22,7 @@ correct website" :**
 ```
 localhost
 localhost/wordpress
+localhost/wordpress/wp-admin/
 localhost/phpMyAdmin
 ```
 **"You will need to make
@@ -34,14 +35,20 @@ sure your SQL database works with the WordPress and phpMyAdmin" :**
 - If needed for wordpress :
     - user: kakashi
     - password : tototatatiti42
-    - email : kakashi@konoha.jp
 
 **Bypass "your connection is not private chrome" in Chrome :**
 - In the Chrome address bar, type “chrome://flags/#allow-insecure-localhost“
 - Select the “Enable” link.
 
 **Prevent firefox to redirect http to https :**
-
+- Go to Preferences
+- Privacy
+- Click 'Clear your history' (nothing will happen yet, click safely)
+- Once the pop-up appears, click Details.
+- Untick everything except 'Sites Preferences'
+- Select 'Everything' in the select box at the top
+- Click Ok
+- Try now
 https://stackoverflow.com/questions/30532471/firefox-redirects-to-https
 
 
