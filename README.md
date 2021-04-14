@@ -122,7 +122,7 @@ So here, we have to install :
 - **Nginx to serve our content** ;
 - **MySQL to store and manage our data** ;
 - **phpMyAdmin to handle the administration of MySQL over the web** ;
-- **Wordpress to publish and manage our content** with a beautiful interface;
+- **Wordpress to publish and manage our content** with an interface;
 
 So let the fun begin.
 
@@ -249,7 +249,7 @@ In `disable_autoindex.sh`, I'm going to :
 
 # **IV. Brace yourself for the correction**
 
-Your *caring, kind, gracious, understanding, considerate, benevolent* peer will probably try the following :
+Your peer will probably try the following :
 - launch your file and check that everything is working ;
 - go to your localhost/wordpress and check that you don't have any error messages ;
  and that your database is properly taken into account ;
